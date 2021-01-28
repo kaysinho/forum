@@ -1,0 +1,24 @@
+.comment {
+  display: flex;
+  padding: 1em;
+}
+
+i.small {
+  font-size: 3em;
+  margin: 0 0.5em;
+}
+
+strong {
+  margin-right: 0.5em;
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 0;
+  margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.lastDate{
+    font-size: 12px;
+}

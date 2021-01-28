@@ -1,0 +1,13 @@
+.input-field{
+    margin: 0;
+    display: flex;
+    textarea{
+        background-color: white;
+        padding: 10px;
+        margin: 1em;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+}

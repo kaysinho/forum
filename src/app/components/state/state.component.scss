@@ -1,0 +1,47 @@
+.profile{
+    padding-left: 1em;
+}
+
+h5{
+    margin-bottom: 0;
+}
+
+.card-content{
+    padding-bottom: 0;
+}
+
+.actions{
+    margin-top: 1.5em;
+    .action{
+        margin-right: 2em;
+    
+    }
+}
+
+.card-action{
+    display: inline;
+    padding-left: 1em;
+
+    span.badge{
+        width: 1.5em;
+        height: 1.5em;
+        min-width: 0;
+        border-radius: 0.75em;
+        margin-left: 0;
+        margin-right: 2px;
+    }
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+    margin: 0;
+}
+
+.reactions{
+    display: flex;
+    justify-content: space-between;
+    width: 25em;
+}
+
+.mini-reactions{
+    margin-right: 1em;
+}

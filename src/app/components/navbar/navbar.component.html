@@ -1,0 +1,15 @@
+<ul id="dropdown1" class="dropdown-content">
+  <li (click)="selectUser(user.id)" *ngFor="let user of users">{{user.name}}</li>
+</ul>
+<nav class="green accent-4">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Domicilios Test</a>
+
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Repositorio</a></li>
+        <li><a href="badges.html">Autor</a></li>
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Hola {{ user.name }}!<i class="material-icons right">arrow_drop_down</i></a></li>
+
+      </ul>
+    </div>
+  </nav>

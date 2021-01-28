@@ -1,0 +1,48 @@
+<div class="col s12 m7">
+  <div class="card horizontal">
+    <div class="card-stacked">
+      <div class="card-content">
+        <div class="row">
+          <div class="col s2 profile">
+            <i class="material-icons large grey-text darken-1"
+              >account_circle</i
+            >
+          </div>
+          <div class="col s10">
+            <h5 class="green-text accent-4">{{ user.name }}</h5>
+            <p class="grey-text lighten-1">Hace {{ state.date | timePost }}</p>
+            <h6>{{ state.message }}</h6>
+            <div class="actions">
+              <a class="action green-text accent-4" (click)="showReactions = !showReactions" href="#">Reaccionar</a>
+              <a class="action green-text accent-4" (click)="showComments = !showComments" href="#">Comentar</a>
+            </div>
+            <div class="actions reactions" *ngIf="showReactions">
+              <a (click)="postReaction('blue'); showReactions=false" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">thumb_up_alt</i></a>
+              <a (click)="postReaction('orange'); showReactions=false" class="btn-floating btn-large waves-effect waves-light orange"><i class="material-icons">thumb_down_alt</i></a>
+              <a (click)="postReaction('yellow'); showReactions=false" class="btn-floating btn-large waves-effect waves-light yellow"><i class="material-icons grey-text">sentiment_satisfied_alt</i></a>
+              <a (click)="postReaction('red'); showReactions=false" class="btn-floating btn-large waves-effect waves-light red"><i class="medium material-icons">whatshot</i></a>
+              <a (click)="postReaction('green'); showReactions=false" class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">sentiment_very_dissatisfied</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-action">
+        <div class="left mini-reactions">
+          <span *ngIf="reactionService.exist('yellow', state.id)" class="badge yellow"></span>
+          <span *ngIf="reactionService.exist('red', state.id)" class="badge red"></span>
+          <span *ngIf="reactionService.exist('blue', state.id)" class="badge blue"></span> 
+          <span *ngIf="reactionService.exist('orange', state.id)" class="badge orange"></span> 
+          <span *ngIf="reactionService.exist('green', state.id)" class="badge green"></span> 
+        </div>
+        <span class="green-text accent-4"><strong *ngIf="reactions.length>0">{{ reactions.length}}</strong><strong *ngIf="reactions.length==0">Sin reacciones</strong></span>
+        <div class="right">
+            <span style="cursor: pointer;" (click)="showComments = !showComments" class="grey-text lighten-1">{{ comments.length }} comentarios</span>
+        </div>
+      </div>
+      <div *ngIf="showComments">
+        <app-comment  [comment]="comment" *ngFor="let comment of comments"></app-comment>
+      </div>
+      <app-new-comment *ngIf="showComments" (newCommentEvent)="getComments()" [state]="state"></app-new-comment>
+    </div>
+  </div>
+</div>
