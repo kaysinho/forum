@@ -24,7 +24,7 @@ export class UserService {
   }
 
   userSelected():User{
-    this.user = JSON.parse(localStorage.getItem(this.key))
+    this.user = localStorage.getItem(this.key) ? JSON.parse(localStorage.getItem(this.key)) : this.users[0]
     return this.user;
   }
 
