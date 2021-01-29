@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-declare var M : any;
-declare var $ : any;
+declare var M: any;
+declare var $: any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,11 +9,12 @@ declare var $ : any;
 })
 export class AppComponent {
   title = 'forum';
-  constructor(){
+  constructor() {
     setTimeout(() => {
-      $(".dropdown-trigger").dropdown();
+      $("#dropdownTrigger1").dropdown();
+      $("#dropdownTrigger2").dropdown();
       let elems = document.querySelectorAll('.sidenav');
-    let instances = M.Sidenav.init(elems, {});
+      let instances = M.Sidenav.init(elems, {});
     }, 2000);
   }
 }

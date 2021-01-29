@@ -3,6 +3,12 @@
     {{ user.name }}
   </li>
 </ul>
+
+<ul id="dropdown2" class="dropdown-content">
+  <li (click)="selectUser(user.id)" *ngFor="let user of users">
+    {{ user.name }}
+  </li>
+</ul>
 <nav class="white">
   <div class="nav-wrapper ">
     <a href="#!" class="brand-logo center">Domicilios Test</a>
@@ -12,7 +18,7 @@
       <li><a target="_blank" href="https://github.com/kaysinho/forum">Repositorio</a></li>
       <li><a target="_blank" href="https://www.linkedin.com/in/jhonantan-plata/">Autor</a></li>
       <li>
-        <a class="dropdown-trigger" href="#!" data-target="dropdown1"
+        <a id="dropdownTrigger1" class="dropdown-trigger" href="#!" data-target="dropdown2"
           >Hola {{ user.name }}!<i class="material-icons right"
             >arrow_drop_down</i
           ></a
@@ -26,7 +32,7 @@
   <li><a target="_blank" href="https://github.com/kaysinho/forum">Repositorio</a></li>
   <li><a target="_blank" href="https://www.linkedin.com/in/jhonantan-plata/">Autor</a></li>
   <li>
-    <a class="dropdown-trigger" href="#!" data-target="dropdown1">
+    <a id="dropdownTrigger2" class="dropdown-trigger" href="#!" data-target="dropdown1">
       Hola {{ user.name }}!<i class="material-icons right">arrow_drop_down</i>
       </a>
   </li>
