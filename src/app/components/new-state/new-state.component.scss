@@ -13,3 +13,10 @@ textarea{
 .input-field{
     margin-bottom: 0;
 }
+
+@media screen and (max-width: 600px) {
+    textarea{
+        border-bottom: 0;
+    }
+
+}

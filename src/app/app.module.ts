@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NewStateComponent } from './components/new-state/new-state.component';
@@ -27,7 +26,6 @@ import { TimePostPipe } from './pipes/time-post.pipe';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule
   ],
   providers: [],

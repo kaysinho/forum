@@ -22,3 +22,20 @@ p {
 .lastDate{
     font-size: 12px;
 }
+
+@media screen and (max-width: 600px) {
+  i.small {
+    font-size: 2em;
+    margin-right: 0.5rem;
+    margin-left: 0;
+  }
+  strong {
+    margin-right: 0.5em;
+    font-weight: 500;
+  }
+  
+  p{
+    letter-spacing: -0.3px;
+  }
+
+}

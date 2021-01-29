@@ -19,6 +19,7 @@ export class StateComponent implements OnInit {
   showComments : boolean = false;
   showReactions : boolean = false;
   @Input() state : State;
+  isMobile: boolean = false;
   constructor(private userService:UserService, 
     private commentService:CommentService,
     public reactionService:ReactionService) { }
@@ -27,6 +28,15 @@ export class StateComponent implements OnInit {
     this.user = this.userService.getById(this.state.idUser)
     this.getComments()
     this.getReactions()
+    this.screenSize()
+  }
+
+  screenSize(){
+    if(window.screen.width<=600){
+      this.isMobile = true;
+    }else{
+      this.isMobile = false
+    }
   }
 
   getComments(){

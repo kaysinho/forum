@@ -1,9 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
-.container{
-    padding-top: 2em;
-    width: 60%;
+.container {
+  padding-top: 2em;
+  width: 60%;
 }
 
-.btn, .btn-large, .btn-small, .btn-flat{
-    text-transform: none;
+.btn,
+.btn-large,
+.btn-small,
+.btn-flat {
+  text-transform: none;
 }
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding-top: 2em;
+    width: 90%;
+  }
+
+
+}
+

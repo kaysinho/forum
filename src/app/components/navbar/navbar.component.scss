@@ -1,3 +1,18 @@
 .nav-wrapper{
     padding-left: 1em;
 }
+
+a{
+    color: black;
+}
+
+.brand-logo {
+    font-size: 25px;
+    font-weight: 600;
+  }
+
+@media screen and (max-width: 600px) {  
+    .brand-logo {
+      font-size: 20px;
+    }
+  }

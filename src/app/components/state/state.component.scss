@@ -1,47 +1,118 @@
-.profile{
-    padding-left: 1em;
+.profile {
+  padding-left: 1em;
 }
 
-h5{
-    margin-bottom: 0;
+.btn-floating{
+    z-index: 100;
 }
 
-.card-content{
-    padding-bottom: 0;
+h5 {
+  margin-bottom: 0;
+  font-weight: 650;
 }
 
-.actions{
+.card-content {
+  padding-bottom: 0;
+  
+}
+
+.action-links{
     margin-top: 1.5em;
-    .action{
-        margin-right: 2em;
-    
-    }
+
+  .action {
+    margin-right: 2em;
+  }
 }
 
-.card-action{
-    display: inline;
-    padding-left: 1em;
+.emotions{
+    position: relative;
+}
 
-    span.badge{
-        width: 1.5em;
-        height: 1.5em;
-        min-width: 0;
-        border-radius: 0.75em;
-        margin-left: 0;
-        margin-right: 2px;
-    }
+.actions {
+    position: sticky;
+    z-index: 1;
+}
+
+.card-action {
+  display: inline;
+  padding-left: 1em;
+
+  span.badge {
+    width: 1.5em;
+    height: 1.5em;
+    min-width: 0;
+    border-radius: 0.75em;
+    margin-left: 0;
+    margin-right: 2px;
+  }
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
-    margin: 0;
+  margin: 0;
 }
 
-.reactions{
+.reactions {
+  display: flex;
+  justify-content: space-between;
+  width: 25em;
+}
+
+.mini-reactions {
+  margin-right: 1em;
+}
+
+@media screen and (max-width: 600px) {
+  .profile {
+    padding-left: 0;
+    padding-top: 1em;
+  }
+  
+  .reactions{
+      width: 100%;
+  }
+
+  i.large {
+    font-size: 3.5rem;
+  }
+
+  h5 {
+    font-size: 1.35rem;
+  }
+
+  p {
+    font-size: 10px;
+  }
+
+  .btn-large{
+      width: 40px;
+      height: 40px;
+
+      i{
+          font-size: 1.5rem;
+          line-height: 0;
+      }
+  }
+
+  .actions-mobile {
     display: flex;
     justify-content: space-between;
-    width: 25em;
-}
+    align-items: center;
+    padding: 0;
+  }
 
-.mini-reactions{
-    margin-right: 1em;
+  a {
+    text-transform: none !important;
+    font-size: 17px;
+    width: 50%;
+    height: 3.2em;
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  .reaction-box{
+      padding: 0;
+  }
+  .border-left{
+      border-left: 1px solid #eceff1;
+  }
 }

@@ -12,17 +12,18 @@
             <h5 class="green-text accent-4">{{ user.name }}</h5>
             <p class="grey-text lighten-1">Hace {{ state.date | timePost }}</p>
             <h6>{{ state.message }}</h6>
-            <div class="actions">
-              <a class="action green-text accent-4" (click)="showReactions = !showReactions" href="#">Reaccionar</a>
-              <a class="action green-text accent-4" (click)="showComments = !showComments" href="#">Comentar</a>
+            <div class="action-links" *ngIf="!isMobile">
+              <a class="action green-text accent-4" (click)="$event.preventDefault(); showReactions = !showReactions" href="#">Reaccionar</a>
+              <a class="action green-text accent-4" (click)="$event.preventDefault(); showComments = !showComments" href="#">Comentar</a>
             </div>
-            <div class="actions reactions" *ngIf="showReactions">
-              <a (click)="postReaction('blue'); showReactions=false" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">thumb_up_alt</i></a>
-              <a (click)="postReaction('orange'); showReactions=false" class="btn-floating btn-large waves-effect waves-light orange"><i class="material-icons">thumb_down_alt</i></a>
-              <a (click)="postReaction('yellow'); showReactions=false" class="btn-floating btn-large waves-effect waves-light yellow"><i class="material-icons grey-text">sentiment_satisfied_alt</i></a>
-              <a (click)="postReaction('red'); showReactions=false" class="btn-floating btn-large waves-effect waves-light red"><i class="medium material-icons">whatshot</i></a>
-              <a (click)="postReaction('green'); showReactions=false" class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">sentiment_very_dissatisfied</i></a>
+            <div class="actions reactions emotions" *ngIf="showReactions">
+              <a (click)="$event.preventDefault(); postReaction('blue'); showReactions=false" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">thumb_up_alt</i></a>
+              <a (click)="$event.preventDefault(); postReaction('orange'); showReactions=false" class="btn-floating btn-large waves-effect waves-light orange"><i class="material-icons">thumb_down_alt</i></a>
+              <a (click)="$event.preventDefault(); postReaction('yellow'); showReactions=false" class="btn-floating btn-large waves-effect waves-light yellow"><i class="material-icons grey-text">sentiment_satisfied_alt</i></a>
+              <a (click)="$event.preventDefault(); postReaction('red'); showReactions=false" class="btn-floating btn-large waves-effect waves-light red"><i class="medium material-icons">whatshot</i></a>
+              <a (click)="$event.preventDefault(); postReaction('green'); showReactions=false" class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">sentiment_very_dissatisfied</i></a>
             </div>
+ 
           </div>
         </div>
       </div>
@@ -34,9 +35,16 @@
           <span *ngIf="reactionService.exist('orange', state.id)" class="badge orange"></span> 
           <span *ngIf="reactionService.exist('green', state.id)" class="badge green"></span> 
         </div>
-        <span class="green-text accent-4"><strong *ngIf="reactions.length>0">{{ reactions.length}}</strong><strong *ngIf="reactions.length==0">Sin reacciones</strong></span>
+        <span class="green-text accent-4"><strong *ngIf="reactions.length>0">{{ reactions.length}}</strong></span>
+        <span class="grey-text accent-4"><strong *ngIf="reactions.length==0">Sin reacciones</strong></span>
         <div class="right">
             <span style="cursor: pointer;" (click)="showComments = !showComments" class="grey-text lighten-1">{{ comments.length }} comentarios</span>
+        </div>
+      </div>
+      <div class="card-action reaction-box" *ngIf="isMobile">
+        <div class="actions-mobile" >
+          <a class="action green-text accent-4" (click)="$event.preventDefault(); showReactions = !showReactions" href="#">Reaccionar</a>
+          <a class="action green-text accent-4 border-left" (click)="$event.preventDefault(); showComments = !showComments" href="#">Comentar</a>
         </div>
       </div>
       <div *ngIf="showComments">

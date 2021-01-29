@@ -4,7 +4,7 @@
   </div>
   <div class="col s2 ">
       <p><strong class="green-text accent-4">{{ getUserName() }}</strong></p>
-      <p class="lastDate grey-text darken-1">Hace 2 dias</p>
+      <p class="lastDate grey-text darken-1">Hace {{ comment.date | timePost }}</p>
   </div>
   <div class="col s9">
     <p>{{ comment.message }}</p>

@@ -3,11 +3,11 @@
     <div class="card-stacked">
       <div class="card-content">
         <div class="input-field col s12">
-          <textarea [(ngModel)]="state" name="state" id="textarea1" class="materialize-textarea"></textarea>
+          <textarea [(ngModel)]="state" (keyup.enter)="post()" name="state" id="textarea1" class="materialize-textarea"></textarea>
           <label for="textarea1">Escribe aquí tu estado</label>
         </div>
 
-        <button (click)="post()" class="btn green accent-4 waves-effect right">Publicar</button>
+        <button *ngIf="!isMobile" (click)="post()" class="btn green accent-4 waves-effect right">Publicar</button>
       </div>
     </div>
   </div>

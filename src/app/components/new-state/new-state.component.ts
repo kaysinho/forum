@@ -11,10 +11,20 @@ import { UserService } from 'src/app/services/user.service';
 export class NewStateComponent implements OnInit {
   state : string = ""
   @Output() newStateEvent = new EventEmitter<boolean>();
+  isMobile: boolean = false;
 
   constructor(private service : StateService, private userService:UserService) { }
 
   ngOnInit(): void {
+    this.screenSize()
+  }
+
+  screenSize(){
+    if(window.screen.width<=600){
+      this.isMobile = true;
+    }else{
+      this.isMobile = false
+    }
   }
 
   post(){

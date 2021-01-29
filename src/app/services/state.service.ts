@@ -25,6 +25,8 @@ export class StateService {
   }
 
   get():Array<State>{
+    this.states = localStorage.getItem(this.key) ? JSON.parse(localStorage.getItem(this.key)) : [];
+
     return this.states;
   }
 }
